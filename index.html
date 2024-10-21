@@ -1,0 +1,3766 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hepta &mdash; Free Website Template by Free-Template.co</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body,
+      html {
+        height: 100%;
+        font-family: Arial, sans-serif;
+        overflow-x: hidden;
+      }
+      
+      /* Background image */
+      .bg1 {
+        background-image: url("./images/bg.jpg"); /* Replace with your background image */
+        height: 100vh;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+      
+      /* Logo and Menu */
+      .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+        color: white;
+        font-family: fantasy;
+      }
+      
+      .logo h1 {
+        font-size: 2rem;
+        color: white;
+      }
+      
+      .menu {
+        cursor: pointer;
+        font-size: 1rem;
+      
+        color: white;
+      }
+      
+      /* Hero Section */
+      .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: white;
+        height: 100vh;
+        margin-top: -60px;
+      }
+      
+      .content h1 {
+        font-size: 4rem;
+        font-weight: bold;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        font-family: serif;
+      }
+      
+      .content p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+        font-family: serif;
+      }
+      
+      .button {
+        display: inline-block;
+        padding: 15px 30px;
+        border: solid rgb(155, 140, 140);
+      
+        color: rgb(240, 232, 232);
+        text-transform: uppercase;
+        font-weight: bold;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      
+      .button:hover {
+        background-color: rgb(96, 104, 100);
+        color: white;
+      }
+      
+      /* Mobile Menu */
+      .menu-list {
+        background-color: white;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      }
+      
+      .menu-list ul {
+        list-style-type: none;
+        padding: 0;
+        margin-top: 150px;
+      }
+      
+      .menu-list li {
+        text-align: center;
+        padding: 20px;
+      }
+      
+      .menu-list li a {
+        font-family: serif;
+        font-size: 2.5rem;
+        font-weight: bold;
+        text-decoration: none;
+        color: black;
+        transition: color 0.3s ease, background-color 0.3s ease;
+      }
+      
+      .menu-list li a:hover {
+        color: rgb(23, 206, 145);
+        cursor: pointer;
+      }
+      
+      .close {
+        cursor: pointer;
+        font-size: 30px;
+        color: black;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        display: none;
+      }
+      
+      /* Disable scrolling */
+      .no-scroll {
+        overflow: hidden;
+      }
+      
+      /* Media Queries for Responsive Design */
+      @media (max-width: 991px) {
+        .content h1 {
+          font-size: 3rem;
+        }
+      
+        .button {
+          padding: 12px 25px;
+        }
+      
+        .menu-list li a {
+          font-size: 2rem;
+        }
+      }
+      
+      @media (max-width: 767px) {
+        .content h1 {
+          font-size: 2.5rem;
+        }
+      
+        .button {
+          padding: 10px 20px;
+          margin-top: -90px;
+          margin-bottom: 59px;
+        }
+      
+        .menu-list li a {
+          font-size: 1.8rem;
+        }
+      }
+      @media (max-width: 575px) {
+        .button {
+          margin-bottom: 90px;
+        }
+      }
+      /* General Styles */
+      .welcome {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin: 170px 0 120px;
+        flex-wrap: wrap; /* Allow flex items to wrap on smaller screens */
+      }
+      
+      .leftimg img {
+        width: 100%; /* Make the image responsive */
+        max-width: 600px; /* Set maximum width for larger screens */
+      }
+      
+      .righttext {
+        max-width: 600px;
+        padding: 20px;
+      }
+      
+      .righttext h1 {
+        margin-top: 50px;
+        font-family: serif;
+        font-size: 2.5em;
+      }
+      
+      .righttext p {
+        margin-top: 30px;
+        line-height: 1.8em;
+        color: #6c757d;
+        text-align: justify;
+        animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+      }
+      
+      .watch {
+        display: flex;
+        margin-top: 5%;
+        align-items: center;
+      }
+      
+      .watch img {
+        margin-right: 8px;
+      }
+      
+      .watch h4 {
+        color: rgb(30, 160, 192);
+        transition: color 0.3s;
+      }
+      
+      .watch h4:hover {
+        color: blue;
+      }
+      
+      /* Responsive Styles */
+      
+      /* For tablets */
+      @media (max-width: 768px) {
+        .welcome {
+          flex-direction: column;
+          margin: 100px 20px;
+        }
+      
+        .righttext h1 {
+          font-size: 2em;
+        }
+      
+        .righttext p {
+          margin-right: 0;
+        }
+      
+        .leftimg {
+          margin: 0;
+          width: 100%;
+        }
+      }
+      
+      /* For mobile phones */
+      @media (max-width: 576px) {
+        .righttext h1 {
+          font-size: 1.8em;
+          text-align: center;
+        }
+      
+        .righttext p {
+          font-size: 1em;
+          text-align: left;
+        }
+      
+        .watch {
+          justify-content: center;
+        }
+      
+        .watch h4 {
+          font-size: 1.2em;
+        }
+      }
+      .mainpage {
+        background-color: rgb(243, 243, 242);
+        height: auto;
+        padding: 50px 0;
+      }
+      
+      .maindata {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding: 0 20px;
+      }
+      
+      .data1 {
+        margin-top: 40px;
+        font-size: 2em;
+        font-family: serif;
+      }
+      
+      .data2 {
+        margin-top: 20px;
+        font-size: 1.2em;
+        line-height: 1.7em;
+        color: #6c757d;
+        margin-bottom: 60px;
+      }
+      
+      .row1,
+      .imgsec2 {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        gap: 20px; /* Better control over spacing */
+        font-family: serif;
+      }
+      
+      .imgsec2 {
+        margin-bottom: 40px;
+        margin-top: 40px;
+      }
+      .row2 {
+        display: flex;
+        gap: 80px;
+        margin-top: 4opx;
+      }
+      
+      .dish,
+      .ballon,
+      .plane {
+        flex: 1;
+      }
+      
+      .imgsec11 h1,
+      .imgsec2 h1 {
+        font-size: 1.8em;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+      
+      .imgsec11 p,
+      .imgsec2 p {
+        font-family: "Open Sans", sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+        color: #6c757d;
+      }
+      
+      /* Responsive Design */
+      
+      @media (max-width: 1200px) {
+        .data1 {
+          font-size: 1.8em;
+        }
+      
+        .row1,
+        .imgsec2,
+        .row2 {
+          flex-wrap: wrap;
+          gap: 10px;
+        }
+      
+        .dish,
+        .ballon,
+        .plane {
+          flex: 1 1 30%;
+          margin: 10px 0;
+        }
+      }
+      
+      @media (max-width: 768px) {
+        .data1 {
+          font-size: 1.5em;
+        }
+      
+        .row1,
+        .imgsec2,
+        .row2 {
+          flex-direction: column;
+          align-items: center;
+        }
+      
+        .dish,
+        .ballon,
+        .plane {
+          flex: none;
+          width: 80%;
+          margin-bottom: 20px;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        .data1 {
+          font-size: 1.2em;
+        }
+      
+        .row1,
+        .imgsec2,
+        .row2 {
+          flex-direction: column;
+          align-items: center;
+        }
+      
+        .dish,
+        .ballon,
+        .plane {
+          width: 90%;
+          margin-bottom: 20px;
+        }
+      }
+      /* slider end */
+      .slider {
+        height: 160vh;
+      }
+      
+      .manage {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 160px;
+      }
+      
+      .manage h1 {
+        font-family: "Playfair Display", serif;
+        font-weight: bold;
+        font-size: 75px;
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      
+      .manage p {
+        font-size: 1.2em;
+        line-height: 1.7em;
+        color: #6c757d;
+        text-align: center;
+      }
+      
+      .sliderr {
+        height: 140vh;
+      }
+      
+      .slider-container {
+        position: relative;
+        width: 80%;
+        margin: auto;
+        overflow: hidden;
+        margin-top: 60px;
+      }
+      
+      .slider {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+      }
+      
+      .slide {
+        min-width: 100%;
+        box-sizing: border-box;
+      }
+      
+      img {
+        width: 100%;
+        height: auto;
+      }
+      
+      .prev,
+      .next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        cursor: pointer;
+        padding: 16px;
+        font-size: 18px;
+      }
+      
+      .prev {
+        left: 0;
+        margin-top: -150px;
+      }
+      
+      .next {
+        right: 0;
+        margin-top: -150px;
+      }
+      
+      .page4 {
+        display: flex;
+        background-color: rgb(242, 253, 255);
+        height: 225vh;
+        text-align: center;
+        flex-direction: column;
+        margin-top: 30px;
+      }
+      
+      .page4heading {
+        margin-top: 660px;
+        font-family: "Playfair Display", serif;
+        font-size: 4em;
+        color: black;
+        font-weight: bolder;
+      }
+      
+      .page4text {
+        font-family: "Open Sans", sans-serif;
+        font-weight: normal;
+        font-size: 1.2rem;
+        color: aliceblue;
+        margin-top: 60px;
+        font-size: 1.2em;
+        line-height: 1.7em;
+        color: #d5dadf;
+      }
+      
+      /* Responsive Design */
+      
+      /* Tablet Devices */
+      @media (max-width: 1024px) {
+        .manage h1 {
+          font-size: 55px;
+        }
+      
+        .manage p {
+          font-size: 1.1em;
+          padding: 0 20px;
+        }
+      
+        .slider-container {
+          width: 90%;
+        }
+      
+        .page4heading {
+          font-size: 3em;
+          margin-top: 300px;
+        }
+      
+        .page4text {
+          font-size: 1.1em;
+          padding: 0 15px;
+        }
+        .prev {
+          margin-top: -170px;
+        }
+        .next {
+          margin-top: -170px;
+        }
+      }
+      
+      /* Mobile Devices */
+      @media (max-width: 768px) {
+        .manage h1 {
+          font-size: 40px;
+        }
+      
+        .manage p {
+          font-size: 1em;
+          padding: 0 10px;
+        }
+      
+        .slider-container {
+          width: 95%;
+        }
+      
+        .prev,
+        .next {
+          padding: 12px;
+          font-size: 16px;
+        }
+        .prev {
+          margin-top: -300px;
+        }
+        .next {
+          margin-top: -300px;
+        }
+        .page4heading {
+          font-size: 2.5em;
+          margin-top: 200px;
+        }
+      
+        .page4text {
+          font-size: 1em;
+          padding: 0 10px;
+        }
+      }
+      /* slider end */
+      /* Blog Section */
+      .page4 {
+        display: flex;
+        background-color: rgb(34, 182, 182);
+        height: auto; /* Changed to auto for flexibility */
+        text-align: center;
+        flex-direction: column;
+        padding-bottom: 50px;
+      }
+      
+      .page4heading {
+        margin-top: 100px;
+        font-family: "Playfair Display", serif;
+        font-size: 4em;
+        color: black;
+        font-weight: bolder;
+      }
+      
+      .page4text {
+        font-family: "Open Sans", sans-serif;
+        font-weight: normal;
+        font-size: 1.2rem;
+        color: aliceblue;
+        margin-top: 40px;
+        font-size: 1.2em;
+        line-height: 1.7em;
+        color: #d5dadf;
+      }
+      
+      .blog-section {
+        margin-top: 40px;
+        display: flex;
+        gap: 25px;
+        padding: 20px;
+        justify-content: center;
+        flex-wrap: wrap; /* Added for responsiveness */
+      }
+      
+      .blog-card {
+        background-color: white;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px; /* Added margin for spacing */
+      }
+      
+      .blog-card img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+      }
+      
+      .blog-content {
+        padding: 20px;
+      }
+      
+      .date {
+        color: gray;
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+      }
+      
+      .blog-content h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+      
+      .blog-content p {
+        font-size: 1rem;
+        line-height: 1.5;
+        color: #555;
+      }
+      
+      /* Responsive Styles */
+      
+      /* Large Screens (1200px and above) */
+      @media (max-width: 1200px) {
+        .manage h1 {
+          font-size: 60px;
+        }
+      
+        .blog-card {
+          width: 270px;
+        }
+      }
+      
+      /* Tablets (768px and below) */
+      @media (max-width: 768px) {
+        .manage h1 {
+          font-size: 48px;
+        }
+      
+        .slider-container {
+          width: 90%;
+        }
+      
+        .blog-section {
+          flex-direction: column;
+          align-items: center;
+        }
+      
+        .blog-card {
+          width: 80%;
+        }
+      }
+      
+      /* Mobile Phones (480px and below) */
+      @media (max-width: 480px) {
+        .manage h1 {
+          font-size: 36px;
+        }
+      
+        .slider-container {
+          width: 100%;
+        }
+      
+        .blog-card {
+          width: 90%;
+        }
+      
+        .page4heading {
+          font-size: 2.5em;
+        }
+      
+        .page4text {
+          font-size: 1em;
+          line-height: 1.5em;
+        }
+      }
+      
+      .testimonials {
+        text-align: center;
+        padding: 50px;
+        background-color: rgb(250, 248, 248);
+      }
+      
+      .testimonials h2 {
+        font-size: 3em;
+        margin-bottom: 1px;
+        font-family: "Playfair Display", serif;
+      }
+      
+      .testimonials-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+      
+      .testimonial {
+        width: 30%;
+        padding: 20px;
+        background-color: rgb(250, 248, 248);
+        text-align: center;
+      }
+      
+      .testimonial img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin-bottom: 20px;
+      }
+      
+      .testimonial p {
+        font-size: 1.1em;
+        line-height: 1.6;
+        margin-left: 20px;
+        color: #979494;
+        font-style: italic;
+        text-align: justify;
+        font-weight: lighter;
+        font-family: sans-serif;
+      }
+      
+      .testimonial h4 {
+        font-size: 1.1em;
+        line-height: 1.6;
+        margin-left: 20px;
+        color: #bbb1b1;
+        font-style: italic;
+        text-align: justify;
+        font-weight: lighter;
+        font-family: sans-serif;
+        margin-top: 14px;
+      }
+      
+      /* Responsive Design */
+      
+      /* For large screens */
+      @media (max-width: 1200px) {
+        .testimonials h2 {
+          font-size: 3.5em;
+        }
+      
+        .testimonial {
+          width: 45%; /* Adjust for larger screens */
+        }
+      }
+      
+      /* For tablets and smaller devices */
+      @media (max-width: 768px) {
+        .testimonials h2 {
+          font-size: 2.5em;
+        }
+      
+        .testimonial {
+          width: 100%;
+          margin-bottom: 20px;
+        }
+      
+        .testimonial img {
+          width: 80px;
+          height: 80px;
+        }
+      
+        .testimonial p,
+        .testimonial h4 {
+          font-size: 1em;
+          margin-left: 0;
+        }
+      }
+      
+      /* For mobile devices */
+      @media (max-width: 480px) {
+        .testimonials h2 {
+          font-size: 2em;
+        }
+      
+        .testimonial img {
+          width: 70px;
+          height: 70px;
+        }
+      
+        .testimonial p,
+        .testimonial h4 {
+          font-size: 0.9em;
+        }
+      }
+      .top-destination {
+        text-align: center;
+        padding: 50px;
+        background-color: #f7f5f5;
+      }
+      
+      .top-destination h2 {
+        font-size: 36px;
+        font-weight: bold;
+        margin-bottom: 15px;
+        font-family: "Playfair Display", serif;
+      }
+      
+      .top-destination p {
+        font-size: 16px;
+        color: #777;
+        margin-bottom: 40px;
+        line-height: 1.6;
+        color: #979494;
+        text-align: justify;
+        font-weight: lighter;
+        font-family: sans-serif;
+        max-width: 900px;
+        margin: 0 auto 40px;
+        text-align: justify;
+        text-align: center;
+      }
+      
+      .destination-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      
+      .destination-card {
+        background-color: #f7f5f5;
+        text-align: center;
+      }
+      
+      .destination-card img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 8px;
+      }
+      
+      .destination-card h3 {
+        font-size: 20px;
+        margin: 15px 0;
+      }
+      
+      .rating {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+      }
+      
+      .rating span {
+        font-size: 18px;
+        color: gold;
+      }
+      
+      .rating p {
+        font-size: 14px;
+        color: #777;
+      }
+      
+      /* Responsive Design */
+      
+      /* Medium screens (Tablets) */
+      @media (max-width: 1024px) {
+        .destination-grid {
+          grid-template-columns: repeat(2, 1fr); /* Two columns for tablets */
+        }
+      
+        .top-destination h2 {
+          font-size: 32px;
+        }
+      
+        .top-destination p {
+          font-size: 1em;
+        }
+      }
+      
+      /* Small screens (Mobile) */
+      @media (max-width: 768px) {
+        .destination-grid {
+          grid-template-columns: 1fr; /* One column for mobile */
+        }
+      
+        .top-destination h2 {
+          font-size: 28px;
+        }
+      
+        .top-destination p {
+          font-size: 0.9em;
+          margin-bottom: 30px;
+        }
+      
+        .destination-card img {
+          height: 160px;
+        }
+      
+        .destination-card h3 {
+          font-size: 18px;
+        }
+      }
+      
+      /* Extra small screens */
+      @media (max-width: 480px) {
+        .top-destination h2 {
+          font-size: 24px;
+        }
+      
+        .top-destination p {
+          font-size: 0.8em;
+        }
+      
+        .destination-card img {
+          height: 140px;
+        }
+      
+        .destination-card h3 {
+          font-size: 16px;
+        }
+      
+        .rating span {
+          font-size: 16px;
+        }
+      
+        .rating p {
+          font-size: 12px;
+        }
+      }
+      .footer {
+        background-color: #1a1a1a;
+        color: #ffffff;
+        padding: 50px 0;
+        height: auto; /* Adjust height to auto for responsive scaling */
+      }
+      
+      .footer-container {
+        display: flex;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        flex-wrap: wrap; /* Allows wrapping for smaller screens */
+      }
+      
+      .footer-column {
+        flex: 1;
+        margin: 0 15px;
+        line-height: 40px;
+        min-width: 200px; /* Ensure columns don't collapse on small screens */
+      }
+      
+      .footer-column h4 {
+        font-size: 18px;
+        margin-bottom: 15px;
+        color: #ffffff;
+      }
+      
+      .footer-column ul {
+        list-style: none;
+        padding: 0; /* Added padding reset */
+      }
+      
+      .footer-column ul li {
+        margin-bottom: 10px;
+      }
+      
+      .footer-column ul li a {
+        color: #999999;
+        text-decoration: none;
+      }
+      
+      .footer-column ul li a:hover {
+        color: #ffffff;
+      }
+      
+      .footer-column p {
+        margin-bottom: 15px;
+        color: #999999;
+      }
+      
+      .subscribe form {
+        display: flex;
+        flex-wrap: wrap; /* Allows wrapping for small screens */
+      }
+      
+      .subscribe input {
+        padding: 10px;
+        width: 100%; /* Full width on small screens */
+        border: none;
+        border-radius: 5px 0 0 5px;
+        margin-bottom: 10px; /* Space for small screens */
+      }
+      
+      .subscribe button {
+        padding: 10px;
+        background-color: #1a1a1a;
+        border: none;
+        border-radius: 0 5px 5px 0;
+        cursor: pointer;
+      }
+      
+      .subscribe button img {
+        width: 20px;
+        height: 20px;
+      }
+      
+      .footer-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid #333333;
+        padding-top: 20px;
+        margin-top: 40px;
+        flex-wrap: wrap; /* Allows footer bottom elements to wrap */
+      }
+      
+      .footer-bottom p {
+        font-size: 14px;
+        margin-top: 30px;
+        color: #777;
+        margin-bottom: 20px;
+      }
+      
+      .footer-bottom span {
+        color: red;
+      }
+      
+      .social-icons a {
+        margin-left: 15px;
+      }
+      
+      .social-icons img {
+        width: 20px;
+        height: 20px;
+      }
+      
+      .footer-bottom {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center; /* Center text on small screens */
+      }
+      
+      .footerp {
+        margin-bottom: 22px;
+      }
+      
+      /* Responsive Styles */
+      
+      /* Medium screens (Tablets) */
+      @media (max-width: 1024px) {
+        .footer-container {
+          flex-direction: column; /* Stack footer columns vertically */
+          text-align: center;
+        }
+      
+        .footer-column {
+          margin-bottom: 30px; /* Add margin between sections */
+        }
+      
+        .footer-bottom {
+          flex-direction: column;
+          text-align: center;
+          margin-top: 20px;
+        }
+      }
+      
+      /* Small screens (Mobile) */
+      @media (max-width: 768px) {
+        .footer-container {
+          padding: 0 10px;
+        }
+      
+        .subscribe form {
+          flex-direction: column; /* Stack input and button */
+        }
+      
+        .subscribe input {
+          border-radius: 5px; /* Remove right border radius */
+          margin-bottom: 10px; /* Space between input and button */
+        }
+      
+        .subscribe button {
+          border-radius: 5px; /* Rounded button */
+        }
+      
+        .footer-bottom p {
+          font-size: 12px;
+        }
+      }
+      
+      @media (max-width: 768px) {
+        .testimonial {
+          width: 100%;
+        }
+      }
+      .menu-list {
+        background-color: white;
+        position: absolute;
+        top: 0px;
+        left: 0;
+        width: 100%;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        height: 100vh;
+      }
+      
+      .menu-list ul {
+        list-style-type: none;
+        padding: 0;
+        margin-top: 130px;
+      }
+      
+      .menu-list li {
+        text-align: center;
+        padding: 10px;
+      }
+      
+      .menu-list li a {
+        font-family: serif;
+        font-size: 45px;
+        font-weight: bold;
+        text-decoration: none;
+        color: black;
+        transition: color 0.3s ease, background-color 0.3s ease;
+      }
+      
+      .menu-list li a:hover {
+        color: rgb(23, 206, 145);
+        cursor: pointer;
+        transition: 0.3;
+      }
+      
+      .no-scroll {
+        overflow: hidden;
+      }
+      
+      .close {
+        cursor: pointer;
+        font-size: 20px;
+        color: black;
+        position: absolute;
+        top: 14px;
+        right: 20px;
+        display: none;
+        margin-top: 40px;
+        font-weight: lighter;
+      }
+      
+      /* Media Queries for Responsiveness */
+      
+      /* Large Screens (Desktops) */
+      @media (min-width: 992px) {
+        .content h1 {
+          font-size: 4em;
+        }
+        .content p {
+          font-size: 1.3em;
+        }
+        .button {
+          font-size: 13px;
+          padding: 22px 50px;
+        }
+      }
+      
+      /* Tablets */
+      @media (min-width: 768px) and (max-width: 991px) {
+        .content h1 {
+          font-size: 4em;
+        }
+        .content p {
+          font-size: 1.4em;
+        }
+        .button {
+          padding: 20px 45px;
+          font-size: 14px;
+        }
+        .menu {
+          margin-right: 5px;
+        }
+      }
+      
+      /* Phones */
+      @media (max-width: 767px) {
+        .content {
+          margin-top: 60px;
+        }
+        .content h1 {
+          font-size: 2.5em;
+        }
+        .content p {
+          font-size: 1.2em;
+        }
+        .button {
+          padding: 15px 30px;
+          font-size: 12px;
+          margin-top: 50px;
+        }
+        .menu {
+          margin-top: 20px;
+          margin-right: 0;
+        }
+        .logo {
+          margin-left: 10px;
+          margin-top: 30px;
+        }
+      }
+      image-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      
+      .text-container {
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 20px;
+        line-height: 30px;
+        text-align: justify;
+        margin-top: -20px;
+      }
+      
+      h2 {
+        font-size: 2em;
+        margin-bottom: 20px;
+      }
+      
+      p {
+        color: #555;
+        margin-bottom: 20px;
+      }
+      
+      .learn-more-btn {
+        display: inline-block;
+        padding: 10px 20px;
+        color: #333;
+        text-decoration: none;
+        border: 2px solid #20d0dd;
+        border-radius: 4px;
+        transition: background-color 0.3s, color 0.3s;
+      }
+      
+      .learn-more-btn:hover {
+        background-color: #30dfdf;
+        color: white;
+      }
+      
+      /* Media Queries for Responsiveness */
+      
+      /* Large tablets and smaller screens */
+      @media (max-width: 991px) {
+        .family-room {
+          flex-direction: column; /* Stack elements vertically */
+          margin-left: 0; /* Remove the left margin for centering */
+          margin-right: 0;
+        }
+        .sec23 {
+          flex-direction: column;
+        }
+        .image-container {
+          margin-left: 0; /* Center image on smaller screens */
+          margin-bottom: 20px; /* Add space between image and text */
+        }
+      
+        .text-container {
+          padding: 20px;
+          margin-left: 0; /* Remove left margin for centering */
+        }
+      
+        h2 {
+          font-size: 1.8em; /* Scale down for tablets */
+        }
+      
+        p {
+          font-size: 1rem; /* Adjust text size */
+        }
+      }
+      
+      /* Small tablets and mobile devices */
+      @media (max-width: 767px) {
+        .family-room {
+          padding: 10px; /* Add some padding on mobile */
+        }
+        .sec23 {
+          flex-direction: column;
+        }
+        .text-container {
+          padding: 15px;
+          margin-top: 0; /* Remove negative margin for mobile */
+          text-align: left; /* Align text left for better readability */
+        }
+      
+        h2 {
+          font-size: 1.5em; /* Scale down for mobile */
+        }
+      
+        p {
+          font-size: 0.9rem; /* Adjust text size */
+        }
+      
+        .learn-more-btn {
+          padding: 8px 15px;
+          font-size: 0.9rem; /* Adjust button size */
+        }
+      }
+      
+      /* Extra small mobile devices */
+      @media (max-width: 575px) {
+        .family-room {
+          flex-direction: column;
+        }
+      
+        .image-container {
+          margin-left: 0; /* Remove margin */
+          width: 100%; /* Make image take full width */
+        }
+      
+        h2 {
+          font-size: 1.2em; /* Scale down even more for very small screens */
+        }
+      
+        p {
+          font-size: 0.85rem;
+        }
+      
+        .learn-more-btn {
+          padding: 6px 12px;
+          font-size: 0.8rem;
+        }
+      }
+      .slider {
+        height: 160vh;
+      }
+      
+      .manage {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 160px;
+      }
+      
+      .manage h1 {
+        font-family: "Playfair Display", serif;
+        font-weight: bold;
+        font-size: 75px;
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      
+      .manage p {
+        font-size: 1.2em;
+        line-height: 1.7em;
+        color: #6c757d;
+        text-align: center;
+      }
+      
+      .sliderr {
+        height: 140vh;
+      }
+      
+      .slider-container {
+        position: relative;
+        width: 80%;
+        margin: auto;
+        overflow: hidden;
+        margin-top: 60px;
+      }
+      
+      .slider {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+      }
+      
+      .slide {
+        min-width: 100%;
+        box-sizing: border-box;
+      }
+      
+      img {
+        width: 100%;
+        height: auto;
+      }
+      
+      .prev,
+      .next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        cursor: pointer;
+        padding: 16px;
+        font-size: 18px;
+      }
+      
+      .prev {
+        left: 0;
+        margin-top: -150px;
+      }
+      
+      .next {
+        right: 0;
+        margin-top: -150px;
+      }
+      
+      .page4 {
+        display: flex;
+        background-color: rgb(242, 253, 255);
+        height: 225vh;
+        text-align: center;
+        flex-direction: column;
+        margin-top: 30px;
+      }
+      
+      .page4heading {
+        margin-top: 660px;
+        font-family: "Playfair Display", serif;
+        font-size: 4em;
+        color: black;
+        font-weight: bolder;
+      }
+      
+      .page4text {
+        font-family: "Open Sans", sans-serif;
+        font-weight: normal;
+        font-size: 1.2rem;
+        color: aliceblue;
+        margin-top: 60px;
+        font-size: 1.2em;
+        line-height: 1.7em;
+        color: #d5dadf;
+      }
+      
+      /* Responsive Design */
+      
+      /* Tablet Devices */
+      @media (max-width: 1024px) {
+        .manage h1 {
+          font-size: 55px;
+        }
+      
+        .manage p {
+          font-size: 1.1em;
+          padding: 0 20px;
+        }
+      
+        .slider-container {
+          width: 90%;
+        }
+      
+        .page4heading {
+          font-size: 3em;
+          margin-top: 300px;
+        }
+      
+        .page4text {
+          font-size: 1.1em;
+          padding: 0 15px;
+        }
+        .prev {
+          margin-top: -170px;
+        }
+        .next {
+          margin-top: -170px;
+        }
+      }
+      
+      /* Mobile Devices */
+      @media (max-width: 768px) {
+        .manage h1 {
+          font-size: 40px;
+        }
+      
+        .manage p {
+          font-size: 1em;
+          padding: 0 10px;
+        }
+      
+        .slider-container {
+          width: 95%;
+        }
+      
+        .prev,
+        .next {
+          padding: 12px;
+          font-size: 16px;
+        }
+        .prev {
+          margin-top: -300px;
+        }
+        .next {
+          margin-top: -300px;
+        }
+        .page4heading {
+          font-size: 2.5em;
+          margin-top: 200px;
+        }
+      
+        .page4text {
+          font-size: 1em;
+          padding: 0 10px;
+        }
+      }
+      /* slider end */
+      .team-section {
+        text-align: center;
+        padding: 50px 20px;
+        margin-top: 200px;
+      }
+      
+      .team-section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+      }
+      
+      .team-intro {
+        color: #666;
+        margin-bottom: 40px;
+        font-size: 1.2rem;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      
+      .team-container {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto 40px;
+        flex-wrap: wrap; /* Added to wrap the team members on smaller screens */
+      }
+      
+      .team-member {
+        background-color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        overflow: hidden;
+        width: 300px;
+        text-align: center;
+        flex: 1 1 calc(33.33% - 30px); /* Makes 3 items per row */
+      }
+      
+      .team-member img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+      
+      .team-member-info {
+        padding: 20px;
+      }
+      
+      .team-member-info p {
+        color: #999;
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+      }
+      
+      .team-member-info h3 {
+        font-size: 1.5rem;
+        margin-top: 5px;
+        font-weight: bold;
+      }
+      
+      /* Media queries for responsive layout on smaller screens */
+      @media (max-width: 1200px) {
+        .team-member {
+          flex: 1 1 calc(50% - 30px); /* Makes 2 items per row */
+        }
+      }
+      
+      @media (max-width: 768px) {
+        .team-container {
+          flex-direction: column;
+          gap: 20px;
+        }
+      
+        .team-member {
+          flex: 1 1 100%; /* Single item per row on small screens */
+          width: 100%; /* Ensure full width on small screens */
+        }
+      
+        .team-section h2 {
+          font-size: 2rem;
+        }
+      
+        .team-intro {
+          font-size: 1rem;
+        }
+      
+        .team-member-info h3 {
+          font-size: 1.3rem;
+        }
+      }
+      image-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      
+      .text-container {
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 20px;
+        line-height: 30px;
+        text-align: justify;
+        margin-top: -20px;
+      }
+      
+      h2 {
+        font-size: 2em;
+        margin-bottom: 20px;
+      }
+      
+      p {
+        color: #555;
+        margin-bottom: 20px;
+      }
+      
+      .learn-more-btn {
+        display: inline-block;
+        padding: 10px 20px;
+        color: #333;
+        text-decoration: none;
+        border: 2px solid #20d0dd;
+        border-radius: 4px;
+        transition: background-color 0.3s, color 0.3s;
+      }
+      
+      .learn-more-btn:hover {
+        background-color: #30dfdf;
+        color: white;
+      }
+      
+      /* Media Queries for Responsiveness */
+      
+      /* Large tablets and smaller screens */
+      @media (max-width: 991px) {
+        .family-room {
+          flex-direction: column; /* Stack elements vertically */
+          margin-left: 0; /* Remove the left margin for centering */
+          margin-right: 0;
+        }
+        .sec23 {
+          flex-direction: column;
+        }
+        .image-container {
+          margin-left: 0; /* Center image on smaller screens */
+          margin-bottom: 20px; /* Add space between image and text */
+        }
+      
+        .text-container {
+          padding: 20px;
+          margin-left: 0; /* Remove left margin for centering */
+        }
+      
+        h2 {
+          font-size: 1.8em; /* Scale down for tablets */
+        }
+      
+        p {
+          font-size: 1rem; /* Adjust text size */
+        }
+      }
+      
+      /* Small tablets and mobile devices */
+      @media (max-width: 767px) {
+        .family-room {
+          padding: 10px; /* Add some padding on mobile */
+        }
+        .sec23 {
+          flex-direction: column;
+        }
+        .text-container {
+          padding: 15px;
+          margin-top: 0; /* Remove negative margin for mobile */
+          text-align: left; /* Align text left for better readability */
+        }
+      
+        h2 {
+          font-size: 1.5em; /* Scale down for mobile */
+        }
+      
+        p {
+          font-size: 0.9rem; /* Adjust text size */
+        }
+      
+        .learn-more-btn {
+          padding: 8px 15px;
+          font-size: 0.9rem; /* Adjust button size */
+        }
+      }
+      
+      /* Extra small mobile devices */
+      @media (max-width: 575px) {
+        .family-room {
+          flex-direction: column;
+        }
+      
+        .image-container {
+          margin-left: 0; /* Remove margin */
+          width: 100%; /* Make image take full width */
+        }
+      
+        h2 {
+          font-size: 1.2em; /* Scale down even more for very small screens */
+        }
+      
+        p {
+          font-size: 0.85rem;
+        }
+      
+        .learn-more-btn {
+          padding: 6px 12px;
+          font-size: 0.8rem;
+        }
+      }
+      .slider {
+        height: 160vh;
+      }
+      
+      .manage {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 160px;
+      }
+      
+      .manage h1 {
+        font-family: "Playfair Display", serif;
+        font-weight: bold;
+        font-size: 75px;
+        text-align: center;
+        margin-bottom: 30px;
+      }
+      
+      .manage p {
+        font-size: 1.2em;
+        line-height: 1.7em;
+        color: #6c757d;
+        text-align: center;
+      }
+      
+      .sliderr {
+        height: 140vh;
+      }
+      
+      .slider-container {
+        position: relative;
+        width: 80%;
+        margin: auto;
+        overflow: hidden;
+        margin-top: 60px;
+      }
+      
+      .slider {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+      }
+      
+      .slide {
+        min-width: 100%;
+        box-sizing: border-box;
+      }
+      
+      img {
+        width: 100%;
+        height: auto;
+      }
+      
+      .prev,
+      .next {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border: none;
+        cursor: pointer;
+        padding: 16px;
+        font-size: 18px;
+      }
+      
+      .prev {
+        left: 0;
+        margin-top: -150px;
+      }
+      
+      .next {
+        right: 0;
+        margin-top: -150px;
+      }
+      
+      .page4 {
+        display: flex;
+        background-color: rgb(242, 253, 255);
+        height: 225vh;
+        text-align: center;
+        flex-direction: column;
+        margin-top: 30px;
+      }
+      
+      .page4heading {
+        margin-top: 660px;
+        font-family: "Playfair Display", serif;
+        font-size: 4em;
+        color: black;
+        font-weight: bolder;
+      }
+      
+      .page4text {
+        font-family: "Open Sans", sans-serif;
+        font-weight: normal;
+        font-size: 1.2rem;
+        color: aliceblue;
+        margin-top: 60px;
+        font-size: 1.2em;
+        line-height: 1.7em;
+        color: #d5dadf;
+      }
+      
+      /* Responsive Design */
+      
+      /* Tablet Devices */
+      @media (max-width: 1024px) {
+        .manage h1 {
+          font-size: 55px;
+        }
+      
+        .manage p {
+          font-size: 1.1em;
+          padding: 0 20px;
+        }
+      
+        .slider-container {
+          width: 90%;
+        }
+      
+        .page4heading {
+          font-size: 3em;
+          margin-top: 300px;
+        }
+      
+        .page4text {
+          font-size: 1.1em;
+          padding: 0 15px;
+        }
+        .prev {
+          margin-top: -170px;
+        }
+        .next {
+          margin-top: -170px;
+        }
+      }
+      
+      /* Mobile Devices */
+      @media (max-width: 768px) {
+        .manage h1 {
+          font-size: 40px;
+        }
+      
+        .manage p {
+          font-size: 1em;
+          padding: 0 10px;
+        }
+      
+        .slider-container {
+          width: 95%;
+        }
+      
+        .prev,
+        .next {
+          padding: 12px;
+          font-size: 16px;
+        }
+        .prev {
+          margin-top: -300px;
+        }
+        .next {
+          margin-top: -300px;
+        }
+        .page4heading {
+          font-size: 2.5em;
+          margin-top: 200px;
+        }
+      
+        .page4text {
+          font-size: 1em;
+          padding: 0 10px;
+        }
+      }
+      /* slider end */
+      .team-section {
+        text-align: center;
+        padding: 50px 20px;
+        margin-top: 200px;
+      }
+      
+      .team-section h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+      }
+      
+      .team-intro {
+        color: #666;
+        margin-bottom: 40px;
+        font-size: 1.2rem;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      
+      .team-container {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto 40px;
+        flex-wrap: wrap; /* Added to wrap the team members on smaller screens */
+      }
+      
+      .team-member {
+        background-color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        overflow: hidden;
+        width: 300px;
+        text-align: center;
+        flex: 1 1 calc(33.33% - 30px); /* Makes 3 items per row */
+      }
+      
+      .team-member img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+      
+      .team-member-info {
+        padding: 20px;
+      }
+      
+      .team-member-info p {
+        color: #999;
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+      }
+      
+      .team-member-info h3 {
+        font-size: 1.5rem;
+        margin-top: 5px;
+        font-weight: bold;
+      }
+      
+      /* Media queries for responsive layout on smaller screens */
+      @media (max-width: 1200px) {
+        .team-member {
+          flex: 1 1 calc(50% - 30px); /* Makes 2 items per row */
+        }
+      }
+      
+      @media (max-width: 768px) {
+        .team-container {
+          flex-direction: column;
+          gap: 20px;
+        }
+      
+        .team-member {
+          flex: 1 1 100%; /* Single item per row on small screens */
+          width: 100%; /* Ensure full width on small screens */
+        }
+      
+        .team-section h2 {
+          font-size: 2rem;
+        }
+      
+        .team-intro {
+          font-size: 1rem;
+        }
+      
+        .team-member-info h3 {
+          font-size: 1.3rem;
+        }
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      
+      body,
+      html {
+        height: 100%;
+        font-family: Arial, sans-serif;
+      }
+      
+      .bg1 {
+        background-image: url(./images/hero_4.jpg);
+        height: 90vh;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-color: #f3f2f2;
+      }
+      
+      .logo {
+        margin-left: 20px;
+        margin-top: 60px;
+      }
+      
+      .menu {
+        margin-top: 60px;
+        margin-right: 10px;
+      }
+      
+      .container {
+        display: flex;
+        justify-content: space-between;
+        color: white;
+        font-family: fantasy;
+        font-weight: lighter;
+      }
+      
+      .button {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: transparent;
+        border: 2px solid white;
+        color: white;
+        text-transform: uppercase;
+        font-size: 14px;
+        font-weight: bold;
+        text-decoration: none;
+        transition: background-color 0.3s;
+        margin-top: 70px;
+        padding: 22px 40px;
+      }
+      
+      .button:hover {
+        background-color: white;
+        color: black;
+      }
+      
+      .content {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 110px;
+        color: aliceblue;
+      }
+      
+      .content h1 {
+        font-size: 5em;
+        font-family: serif;
+      }
+      
+      .content p {
+        margin-top: 10px;
+        font-size: 1.6em;
+        font-family: sans-serif Arial, Helvetica, sans-serif;
+      }
+      
+      span {
+        text-decoration: underline;
+      }
+      
+      .menu-list {
+        background-color: white;
+        position: absolute;
+        top: 0px;
+        left: 0;
+        width: 100%;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        height: 100vh;
+      }
+      
+      .menu-list ul {
+        list-style-type: none;
+        padding: 0;
+        margin-top: 130px;
+      }
+      
+      .menu-list li {
+        text-align: center;
+        padding: 10px;
+      }
+      
+      .menu-list li a {
+        font-family: serif;
+        font-size: 45px;
+        font-weight: bold;
+        text-decoration: none;
+        color: black;
+        transition: color 0.3s ease, background-color 0.3s ease;
+      }
+      
+      .menu-list li a:hover {
+        color: rgb(23, 206, 145);
+        cursor: pointer;
+        transition: 0.3;
+      }
+      
+      .no-scroll {
+        overflow: hidden;
+      }
+      
+      .close {
+        cursor: pointer;
+        font-size: 20px;
+        color: black;
+        position: absolute;
+        top: 14px;
+        right: 20px;
+        display: none;
+        margin-top: 40px;
+        font-weight: lighter;
+      }
+      
+      /* Media Queries for Responsiveness */
+      
+      /* Large Screens (Desktops) */
+      @media (min-width: 992px) {
+        .content h1 {
+          font-size: 5em;
+        }
+        .content p {
+          font-size: 1.6em;
+        }
+        .button {
+          font-size: 16px;
+          padding: 22px 50px;
+        }
+        .menu {
+          margin-top: 40px;
+          margin-right: -140px;
+        }
+        .logo {
+          margin-left: -140px;
+          margin-top: 40px;
+        }
+      }
+      
+      /* Tablets */
+      @media (min-width: 768px) and (max-width: 991px) {
+        .content h1 {
+          font-size: 4em;
+        }
+        .content p {
+          font-size: 1.4em;
+        }
+        .button {
+          padding: 20px 45px;
+          font-size: 14px;
+        }
+        .menu {
+          margin-right: 5px;
+        }
+        .menu {
+          margin-top: 20px;
+          margin-right: 0;
+        }
+        .logo {
+          margin-left: 10px;
+          margin-top: 30px;
+        }
+      }
+      
+      /* Phones */
+      @media (max-width: 767px) {
+        .content {
+          margin-top: 60px;
+        }
+        .content h1 {
+          font-size: 2.5em;
+        }
+        .content p {
+          font-size: 1.2em;
+        }
+        .button {
+          padding: 15px 30px;
+          font-size: 12px;
+          margin-top: 50px;
+        }
+        .menu {
+          margin-top: 20px;
+          margin-right: 0;
+        }
+        .logo {
+          margin-left: 10px;
+          margin-top: 30px;
+        }
+      }
+      .footer {
+        background-color: #1a1a1a;
+        color: #ffffff;
+        padding: 50px 0;
+        height: auto; /* Adjust height to auto for responsive scaling */
+      }
+      
+      .footer-container {
+        display: flex;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        flex-wrap: wrap; /* Allows wrapping for smaller screens */
+      }
+      
+      .footer-column {
+        flex: 1;
+        margin: 0 15px;
+        line-height: 40px;
+        min-width: 200px; /* Ensure columns don't collapse on small screens */
+      }
+      
+      .footer-column h4 {
+        font-size: 18px;
+        margin-bottom: 15px;
+        color: #ffffff;
+      }
+      
+      .footer-column ul {
+        list-style: none;
+        padding: 0; /* Added padding reset */
+      }
+      
+      .footer-column ul li {
+        margin-bottom: 10px;
+      }
+      
+      .footer-column ul li a {
+        color: #999999;
+        text-decoration: none;
+      }
+      
+      .footer-column ul li a:hover {
+        color: #ffffff;
+      }
+      
+      .footer-column p {
+        margin-bottom: 15px;
+        color: #999999;
+      }
+      
+      .subscribe form {
+        display: flex;
+        flex-wrap: wrap; /* Allows wrapping for small screens */
+        background-color: #1a1a1a;
+        border: none;
+      }
+      
+      .subscribe input {
+        padding: 10px;
+        width: 100%; /* Full width on small screens */
+        border: none;
+        border-radius: 5px 0 0 5px;
+        margin-bottom: 10px; /* Space for small screens */
+      }
+      
+      .subscribe button {
+        padding: 10px;
+      
+        background-color: #1a1a1a;
+        border: none;
+        border-radius: 0 5px 5px 0;
+        cursor: pointer;
+      }
+      
+      .subscribe button img {
+        width: 20px;
+        height: 20px;
+      }
+      
+      .footer-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid #333333;
+        padding-top: 20px;
+        margin-top: 40px;
+        flex-wrap: wrap; /* Allows footer bottom elements to wrap */
+      }
+      
+      .footer-bottom p {
+        font-size: 14px;
+        margin-top: 30px;
+        color: #777;
+        margin-bottom: 20px;
+      }
+      
+      .footer-bottom span {
+        color: red;
+      }
+      
+      .social-icons a {
+        margin-left: 15px;
+      }
+      
+      .social-icons img {
+        width: 20px;
+        height: 20px;
+      }
+      .social-icons {
+        display: flex;
+      }
+      
+      .footer-bottom {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center; /* Center text on small screens */
+      }
+      
+      .footerp {
+        margin-bottom: 22px;
+      }
+      
+      /* Responsive Styles */
+      
+      /* Medium screens (Tablets) */
+      @media (max-width: 1024px) {
+        .footer-container {
+          flex-direction: column; /* Stack footer columns vertically */
+          text-align: center;
+        }
+      
+        .footer-column {
+          margin-bottom: 30px; /* Add margin between sections */
+        }
+      
+        .footer-bottom {
+          flex-direction: column;
+          text-align: center;
+          margin-top: 20px;
+        }
+      }
+      
+      /* Small screens (Mobile) */
+      @media (max-width: 768px) {
+        .footer-container {
+          padding: 0 10px;
+        }
+      
+        .subscribe form {
+          flex-direction: column; /* Stack input and button */
+        }
+      
+        .subscribe input {
+          border-radius: 5px; /* Remove right border radius */
+          margin-bottom: 10px; /* Space between input and button */
+        }
+      
+        .subscribe button {
+          border-radius: 5px; /* Rounded button */
+        }
+      
+        .footer-bottom p {
+          font-size: 12px;
+        }
+      }
+      
+      @media (max-width: 768px) {
+        .testimonial {
+          width: 100%;
+        }
+      }
+      /* Section Styling */
+      .contact-section {
+        padding: 60px 0;
+      }
+      
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+      }
+      
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      
+      /* Form Styles */
+      form {
+        background-color: #fff;
+        padding: 40px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+      }
+      
+      .form-group {
+        margin-bottom: 20px;
+      }
+      
+      label {
+        display: block;
+        font-family: serif;
+        color: black;
+      }
+      
+      .form-control {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      
+      textarea.form-control {
+        resize: vertical;
+      }
+      
+      .btn {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border: 1px solid #007bff;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      
+      .btn:hover {
+        background-color: #0056b3;
+      }
+      
+      /* Contact Information */
+      .contact-info {
+        font-size: 20px;
+        padding-left: 20px;
+        font-family: "Georgia", serif;
+      }
+      
+      .contact-info p {
+        margin-bottom: 30px;
+      }
+      
+      .contact-info span.d-block {
+        color: #28a745;
+        font-weight: 700;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        text-decoration: none;
+      }
+      
+      .contact-info p span {
+        text-decoration: none;
+        font-size: 24px;
+        font-family: "Georgia", serif;
+        color: #333;
+        font-weight: bold;
+        line-height: 1.5;
+      }
+      
+      .contact-info p span a {
+        color: #333;
+        text-decoration: none;
+      }
+      
+      .contact-info p span a:hover {
+        text-decoration: underline;
+      }
+      
+      /* Specific Layout */
+      .col-md-7 {
+        flex: 0 0 65%;
+        padding-right: 15px;
+      }
+      
+      .col-md-5 {
+        flex: 0 0 30%;
+        display: flex;
+        align-items: flex-start;
+      }
+      
+      .ml-auto {
+        margin-left: auto;
+      }
+      
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .row {
+          flex-direction: column;
+        }
+        .container {
+          flex-direction: column;
+        }
+        .col-md-7,
+        .col-md-5 {
+          flex: 100%;
+          margin-bottom: 20px;
+        }
+      
+        .contact-info {
+          padding-left: 0;
+        }
+      
+        form {
+          padding: 20px;
+        }
+      
+        .btn {
+          padding: 8px 15px;
+        }
+      }
+      
+      /* For smaller mobile devices (max-width: 576px) */
+      @media (max-width: 576px) {
+        .contact-section {
+          padding: 40px 0;
+        }
+      
+        .container {
+          max-width: 100%;
+          padding: 0 15px;
+          flex-direction: column;
+        }
+      
+        form {
+          padding: 15px;
+        }
+      
+        .btn {
+          padding: 8px 10px;
+        }
+      
+        .contact-info {
+          font-size: 30px;
+        }
+      
+        .contact-info p span {
+          font-size: 20px;
+        }
+      
+        .contact-info span.d-block {
+          font-size: 12px;
+        }
+      }
+      .testimonials {
+        text-align: center;
+        padding: 50px;
+        background-color: rgb(250, 248, 248);
+      }
+      
+      .testimonials h2 {
+        font-size: 4.5em;
+        margin-bottom: 1px;
+        font-family: "Playfair Display", serif;
+      }
+      
+      .testimonials-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 20px;
+        min-height: 90vh;
+      }
+      
+      .testimonial {
+        width: 30%;
+        padding: 20px;
+        background-color: rgb(250, 248, 248);
+        text-align: center;
+      }
+      
+      .testimonial img {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        margin-bottom: 20px;
+      }
+      
+      .testimonial p {
+        font-size: 1.1em;
+        line-height: 1.6;
+        color: #979494;
+        font-style: italic;
+        font-weight: lighter;
+        font-family: sans-serif;
+        text-align: justify;
+      }
+      
+      .testimonial h4 {
+        font-size: 1.1em;
+        line-height: 1.6;
+        color: #bbb1b1;
+        font-style: italic;
+        font-weight: lighter;
+        font-family: sans-serif;
+        margin-top: 14px;
+      }
+      
+      /* Responsive Design */
+      
+      /* Tablet Screen (max-width: 768px) */
+      @media (max-width: 768px) {
+        .testimonials h2 {
+          font-size: 3em;
+        }
+      
+        .testimonials-container {
+          flex-direction: column;
+        }
+      
+        .testimonial {
+          width: 80%; /* Increase width to make use of available space */
+          margin-bottom: 30px;
+        }
+      
+        .testimonial img {
+          margin-right: 0; /* Remove right margin to center the image */
+        }
+      
+        .testimonial p,
+        .testimonial h4 {
+          margin-left: 0; /* Remove left margin for better alignment */
+          text-align: center; /* Center text on smaller screens */
+        }
+      }
+      
+      /* Mobile Screen (max-width: 576px) */
+      @media (max-width: 576px) {
+        .testimonials h2 {
+          font-size: 2.5em;
+        }
+      
+        .testimonial {
+          width: 100%; /* Full width for mobile screens */
+          padding: 10px; /* Reduce padding for smaller screens */
+        }
+      
+        .testimonial img {
+          width: 80px; /* Adjust image size for smaller screens */
+          height: 80px;
+        }
+      
+        .testimonial p,
+        .testimonial h4 {
+          font-size: 1em; /* Smaller font size for better readability */
+        }
+      }
+      
+
+    </style>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page1">
+      <div class="bg1">
+        <header>
+          <div class="container">
+            <div class="logo"><h1>Hepta</h1></div>
+            <div class="menu" id="menuButton" onclick="toggleMenu()"><h1>&#9776;</h1></div>
+           
+          </div>
+        </header>
+       
+        <!--section1 page 1-->
+        <section class="firstpage">
+          <div class="content">
+            <h1>Travel & Tours</h1>
+            <p>
+              A free template by
+              <span style="color: #505253">Colorlib. </span>Download and
+              share!
+            </p>
+            <a href="#" class="button">Visit Colorlib</a>
+          </div>
+        </section>
+      </div>
+    </div>
+    <!--section1 page 1 End-->
+
+   <!--section2 page 2-->
+<section>
+  <div class="welcome">
+    <div class="leftimg">
+      <img src="./images/travel.jpg" alt="Travel Image" />
+    </div>
+    <div class="righttext">
+      <h1>Welcome To Our Website</h1>
+      <div class="scale-up-center">
+        <p>
+          Far far away, behind the word mountains, far from the countries<br />
+          Vokalia and Consonantia, there live the blind texts. Separated they live<br />
+          in Bookmarksgrove right at the coast of the Semantics, a large<br />
+          language ocean.
+        </p>
+      </div>
+      <div class="secline">
+        <p>
+          A small river named Duden flows by their place and supplies it with the<br />
+          necessary regelialia.
+        </p>
+      </div>
+      <div class="watch">
+        <div class="watchimg">
+          <img src="./images/play.png" alt="Watch Video" style="height: 30px; width: 30px" />
+        </div>
+        <div class="watchtext">
+          <h4>WATCH THE VIDEO</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<hr />
+<!--section 3 page 3-->
+<section class="mainpage">
+  <div class="maindata">
+    <div class="data1"><h1>Experience Once In Your Life Time</h1></div>
+    <div class="data2">
+      <p>
+        Far far away, behind the word mountains, far from the countries
+        Vokalia and Consonantia,<br />
+        there live the blind texts. Separated they live in Bookmarksgrove
+        right at the coast of the<br />
+        Semantics, a large language ocean.
+      </p>
+    </div>
+  </div>
+  <div class="imgsec11">
+    <div class="row1">
+      <div class="dish">
+        <img src="./images/dish.png" style="width: 80px; height: 80px;">
+        <h1>Good Foods</h1>
+        <p>Far far away, behind the word mountains, far<br>from the countries Vokalia and Consonantia,<br>
+          there live the blind texts.</p>
+      </div>
+      <div class="travel">
+        <img src="./images/destination.png" style="width: 80px; height: 80px;">
+        <h1>Travel Anywhere</h1>
+        <p>Far far away, behind the word mountains, far<br>from the countries Vokalia and Consonantia,<br>
+          there live the blind texts.</p>
+      </div>
+      <div class="plane">
+        <img src="./images/plane.png" style="width: 80px; height: 80px;">
+        <h1>Airplane</h1>
+        <p>Far far away, behind the word mountains, far<br>from the countries Vokalia and Consonantia,<br>
+          there live the blind texts.</p>
+      </div>
+    </div>
+  </div>
+  <div class="imgsec2">
+    <div class="row2">
+      <div class="beach">
+        <img src="./images/vacations.png" style="width: 80px; height: 80px;">
+        <h1>Beach Resorts</h1>
+        <p>Far far away, behind the word mountains, far<br>from the countries Vokalia and Consonantia,<br>
+          there live the blind texts.</p>
+      </div>
+      <div class="climbing">
+        <img src="./images/climbing.png" style="width: 80px; height: 80px;">
+        <h1>Climbing</h1>
+        <p>Far far away, behind the word mountains, far<br>from the countries Vokalia and Consonantia,<br>
+          there live the blind texts.</p>
+      </div>
+      <div class="ballon">
+        <img src="./images/hot-air-balloon.png" style="width: 80px; height: 80px;">
+        <h1>Good Food</h1>
+        <p>Far far away, behind the word mountains, far<br>from the countries Vokalia and Consonantia,<br>
+          there live the blind texts.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!--section 4 page 4-->
+<section class="sliderr">
+  <div class="manage">
+    <div class="tourtext"><h1>Hotel Gallery</h1></div>
+    <div class="tourstextsub"><p> Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,<br>there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the<br>Semantics, a large language ocean.</p></div>
+  </div>
+  
+  <div class="slider-container">
+    <div class="slider">
+      <div class="slide"><img src="./images/bg.jpg" alt="Image 1"></div>
+      <div class="slide"><img src="./images/bg.jpg" alt="Image 2"></div>
+      <div class="slide"><img src="./images/bg.jpg" alt="Image 3"></div>
+      <div class="slide"><img src="./images/bg.jpg" alt="Image 4"></div>
+    </div>
+    <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+    <button class="next" onclick="moveSlide(1)">&#10095;</button>
+  
+</section>
+<section>
+
+  <div class="page4">
+    <div class="page4heading">Recent Blog Post</div>
+    <div class="page4text"><p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,<br>
+      there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the<br>Semantics, a large language ocean.</p></div>
+    <div>
+      <div class="blog-section">
+        <div class="blog-card">
+          <img src="./images/bg.jpg" alt="Drinks">
+          <div class="blog-content">
+            <p class="date">FEBRUARY 26, 2018</p>
+            <h2>45 Best Places To Unwind</h2>
+            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+          </div>
+        </div>
+    
+        <div class="blog-card">
+          <img src="./images/bg.jpg" alt="Beach">
+          <div class="blog-content">
+            <p class="date">FEBRUARY 26, 2018</p>
+            <h2>45 Best Places To Unwind</h2>
+            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+          </div>
+        </div>
+    
+        <div class="blog-card">
+          <img src="./images/bg.jpg" alt="Living Room">
+          <div class="blog-content">
+            <p class="date">FEBRUARY 26, 2018</p>
+            <h2>45 Best Places To Unwind</h2>
+            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+          </div>
+        </div>
+      </div>   
+</section>
+<!--section 5 page 5-->
+<section class="testimonials">
+  <h2>Happy Customers</h2>
+  <div class="testimonials-container">
+      <div class="testimonial">
+          <img src="./images/man.png" alt="Customer 1">
+          <p>“Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.”</p>
+      <h4> — Clare Gupta</h4>
+        </div>
+
+      <div class="testimonial">
+          <img src="./images/man.png" alt="Customer 2">
+          <p>“Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.”</p>
+          <h4> — Rogie Slater</h4>
+        </div>
+      <div class="testimonial">
+          <img src="./images/man.png" alt="Customer 3">
+          <p>“Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.”</p>
+          <h4>— John Doe  </h4>
+        </div>
+  </div>
+</section>
+<!--section 6 page 6-->
+<section class="top-destination">
+  <h2>Top Destination</h2>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. In dolor, iusto doloremque quo<br>odio repudiandae sunt eveniet? Enim facilis laborum voluptate id porro, culpa maiores<br>quis, blanditiis laboriosam alias. Sed.</p>
+
+  <div class="destination-grid">
+      <div class="destination-card">
+          <img src="./images/resort1.jpg" alt="Food & Wines">
+          <h3>Food & Wines</h3>
+          <div class="rating">
+            <div></div>
+              <span>★★★★☆</span>
+              <p>3,239 reviews</p>
+          </div>
+      </div>
+
+      <div class="destination-card">
+          <img src="./images/resort2.jpeg" alt="Resort & Spa">
+          <h3>Resort & Spa</h3>
+          <div class="rating">
+              <span>★★★★★</span>
+              <p>4,921 reviews</p>
+          </div>
+      </div>
+
+      <div class="destination-card">
+          <img src="./images/resort3.jpeg" alt="Hotel Rooms">
+          <h3>Hotel Rooms</h3>
+          <div class="rating">
+              <span>★★★★☆</span>
+              <p>2,112 reviews</p>
+          </div>
+      </div>
+
+      <div class="destination-card">
+          <img src="./images/resort4.jpg" alt="Mountain Climbing">
+          <h3>Mountain Climbing</h3>
+          <div class="rating">
+              <span>★★★★☆</span>
+              <p>6,421 reviews</p>
+          </div>
+      </div>
+  </div>
+</section>
+ <!-- Footer Section -->
+ <footer class="footer">
+  <div class="footer-container">
+      <div class="footer-column">
+          <h4>Quick Link</h4>
+          <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Terms & Conditions</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Help</a></li>
+              <li><a href="#">Rooms</a></li>
+          </ul>
+      </div>
+      <div class="footer-column">
+          <h4>Support</h4>
+          <ul>
+              <li><a href="#">Our Location</a></li>
+              <li><a href="#">The Hosts</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Restaurant</a></li>
+          </ul>
+      </div>
+      <div class="footer-column">
+          <h4>Contact Info</h4>
+          <p><strong>Address:</strong> 98 West 21th Street, Suite 721<br>
+          New York NY 10016</p>
+          <p><strong>Phone:</strong> (+1) 435 3533</p>
+          <p><strong>Email:</strong> info@yourdomain.com</p>
+      </div>
+      <div class="footer-column subscribe">
+          <h4>Subscribe</h4>
+          <p>Sign up for our newsletter</p>
+          <form action="#">
+              <input type="email" placeholder="Your email..." style="background-color:  #1a1a1a;">
+              <button type="submit"><img src="./images/send.png" alt="Send"></button>
+          </form>
+      </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footerp">
+      <p>Copyright © 2024 All rights reserved | This template is made with <span>&#10084;</span> by Colorlib</p>
+    </div>
+      <div class="social-icons">
+          <a href="#"><img src="images/fb.png" alt="Facebook"></a>
+          <a href="#"><img src="./images/twit.png" alt="Twitter"></a>
+          <a href="#"><img src="./images/insta.jpeg" alt="Instagram"></a>
+          <a href="#"><img src="./images/linkdin.png" alt="LinkedIn"></a>
+          <a href="#"><img src="./images/yt.jpeg" alt="YouTube"></a>
+      </div>
+  </div>
+</footer>
+  <!-- Mobile Menu -->
+  <nav class="menu-list" id="menuList" style="display: none;">
+    <ul>
+      <li><a href="index.html" style="color: rgb(17, 165, 128);">Home</a></li>
+      <li><a href="hotel.html">Hotels</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="news.html">News</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  <div class="close" id="closeButton" style="display: none;" onclick="toggleMenu()">
+    <h1>&#10006;</h1>
+
+    <section class="firstpage">
+      <div class="content">
+        <h1>About Us</h1>
+        <p>
+          A free template by
+          <span style="color: #505253">Colorlib. </span>Download and
+          share!
+        </p>
+       
+      </div>
+    </section>
+  </div>
+</div>
+      <!-- END section -->
+      <section class="family-room">
+        <div class="sec23">
+        <div class="image-container">
+            <img src="./images/hero_1.jpg" style="width: 500px; height: 350px;" alt="Family Room Image">
+        </div>
+        <div class="text-container">
+            <h2>Welcome travel & Tour</h2>
+            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+            <p>A small river named Duden flows by their place and supplies it with the necessary regalia.</p>
+            <a href="#" class="learn-more-btn">Learn More</a>
+        </div>
+      </div>
+    </section> 
+
+    <section class="sliderr">
+      <div class="manage">
+        <div class="tourtext"><h1>Hotel Gallery</h1></div>
+        <div class="tourstextsub"><p> Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,<br>there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the<br>Semantics, a large language ocean.</p></div>
+      </div>
+      
+      <div class="slider-container">
+        <div class="slider">
+          <div class="slide"><img src="./images/bg.jpg" alt="Image 1"></div>
+          <div class="slide"><img src="./images/bg.jpg" alt="Image 2"></div>
+          <div class="slide"><img src="./images/bg.jpg" alt="Image 3"></div>
+          <div class="slide"><img src="./images/bg.jpg" alt="Image 4"></div>
+        </div>
+        <button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="next" onclick="moveSlide(1)">&#10095;</button>
+      
+    </section>
+    <section>
+      <!-- END section -->
+
+      <section class="team-section">
+        <h2>Team</h2>
+        <p class="team-intro">
+            Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.
+        </p>
+
+        <div class="team-container">
+            <!-- Team member 1 -->
+            <div class="team-member">
+                <img src="./images/person_1.jpg" alt="Vince Richardson">
+                <div class="team-member-info">
+                    <p>CEO, CO-FOUNDER</p>
+                    <h3>Vince Richardson</h3>
+                </div>
+            </div>
+
+            <!-- Team member 2 -->
+            <div class="team-member">
+                <img src="./images/person_2.jpg" alt="Jean Love">
+                <div class="team-member-info">
+                    <p>CTO, CO-FOUNDER</p>
+                    <h3>Jean Love</h3>
+                </div>
+            </div>
+
+            <!-- Team member 3 -->
+            <div class="team-member">
+                <img src="./images/person_3.jpg" alt="Jeff Stark">
+                <div class="team-member-info">
+                    <p>MARKETER, CO-FOUNDER</p>
+                    <h3>Jeff Stark</h3>
+                </div>
+            </div>
+        </div>
+
+        <!-- New row of team members -->
+        <div class="team-container">
+            <!-- Team member 4 -->
+            <div class="team-member">
+                <img src="./images/person_1.jpg" alt="Alice Bennett">
+                <div class="team-member-info">
+                    <p>DEVELOPER</p>
+                    <h3>Alice Bennett</h3>
+                </div>
+            </div>
+
+            <!-- Team member 5 -->
+            <div class="team-member">
+                <img src="./images/person_2.jpg" alt="Daniel Lee">
+                <div class="team-member-info">
+                    <p>DESIGNER</p>
+                    <h3>Daniel Lee</h3>
+                </div>
+            </div>
+
+            <!-- Team member 6 -->
+            <div class="team-member">
+                <img src="./images/person_3.jpg" alt="Emily Davis">
+                <div class="team-member-info">
+                    <p>PRODUCT MANAGER</p>
+                    <h3>Emily Davis</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+ <!-- Footer Section -->
+ <footer class="footer">
+  <div class="footer-container">
+      <div class="footer-column">
+          <h4>Quick Link</h4>
+          <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Terms & Conditions</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Help</a></li>
+              <li><a href="#">Rooms</a></li>
+          </ul>
+      </div>
+      <div class="footer-column">
+          <h4>Support</h4>
+          <ul>
+              <li><a href="#">Our Location</a></li>
+              <li><a href="#">The Hosts</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Restaurant</a></li>
+          </ul>
+      </div>
+      <div class="footer-column">
+          <h4>Contact Info</h4>
+          <p><strong>Address:</strong> 98 West 21th Street, Suite 721<br>
+          New York NY 10016</p>
+          <p><strong>Phone:</strong> (+1) 435 3533</p>
+          <p><strong>Email:</strong> info@yourdomain.com</p>
+      </div>
+      <div class="footer-column subscribe">
+          <h4>Subscribe</h4>
+          <p>Sign up for our newsletter</p>
+          <form action="#">
+              <input type="email" placeholder="Your email..." style="background-color:  #1a1a1a;">
+              <button type="submit"><img src="./images/send.png" alt="Send"></button>
+          </form>
+      </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footerp">
+      <p>Copyright © 2024 All rights reserved | This template is made with <span>&#10084;</span> by Colorlib</p>
+    </div>
+      <div class="social-icons">
+          <a href="#"><img src="images/fb.png" alt="Facebook"></a>
+          <a href="#"><img src="./images/twit.png" alt="Twitter"></a>
+          <a href="#"><img src="./images/insta.jpeg" alt="Instagram"></a>
+          <a href="#"><img src="./images/linkdin.png" alt="LinkedIn"></a>
+          <a href="#"><img src="./images/yt.jpeg" alt="YouTube"></a>
+      </div>
+  </div>
+</footer>
+    </div>
+          <!-- Menu Section -->
+          <nav class="menu-list" id="menuList" style="display: none;">
+            <ul>
+              <li><a href="index.html" >Home</a></li>
+              <li><a href="hotel.html">Hotels</a></li>
+              <li><a href="about.html" style="color: rgb(17, 165, 128);">About Us</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="blog.html">News</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </nav>
+          <div class="close" id="closeButton" style="display: none;" onclick="toggleMenu()"><h1>&#10006;</h1></div>
+        </div>
+      </div>
+    
+    
+    <script>
+      let currentSlide = 0;
+    
+    function moveSlide(direction) {
+      const slides = document.querySelectorAll('.slide');
+      const totalSlides = slides.length;
+      
+      currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+      
+      const slider = document.querySelector('.slider');
+      slider.style.transform = `translateX(${-currentSlide * 100}%)`;
+    }
+    function toggleMenu() {
+        const menuList = document.getElementById('menuList');
+        const closeButton = document.getElementById('closeButton');
+        const menuButton = document.getElementById('menuButton');
+        const body = document.body;
+    
+        if (menuList.style.display === "none") {
+          menuList.style.display = "block";
+          closeButton.style.display = "block"; // Show the close button
+          menuButton.style.display = "none"; // Hide the menu button
+          body.classList.add('no-scroll'); // Prevent scrolling
+        } else {
+          menuList.style.display = "none";
+          closeButton.style.display = "none"; // Hide the close button
+          menuButton.style.display = "block"; // Show the menu button
+          body.classList.remove('no-scroll'); // Allow scrolling
+        }
+      }
+    
+    </script>
+  </body>
+</html>
+<meta name="description" content="Free Template by Free-Template.co" />
+    <meta
+      name="keywords"
+      content="free template, free , free website template"
+    />
+    <meta name="author" content="Free-Template.co" />
+
+    <link rel="stylesheet" href="gallery.css" />
+  </head>
+  <body>
+     
+     
+  <div class="page1"></div>
+   
+  <div class="bg1">
+    <header>
+      <div class="container">
+        <div class="logo"><h1>Hepta</h1></div>
+        <div class="menu" id="menuButton" onclick="toggleMenu()"><h1>&#9776;</h1></div>
+       
+      </div>
+    </header>
+   
+    <!--section1 page 1-->
+    <section class="firstpage">
+      <div class="content">
+        <h1>Gallery</h1>
+        <p>
+          A free template by
+          <span style="color: #06090a">Colorlib. </span>Download and
+          share!
+        </p>
+       
+      </div>
+    </section>
+  </div>
+</div>
+    
+      <!-- END section -->
+
+      <section class="section">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-lg-3 mb-4">
+              <a href="images/img_1.jpg" data-fancybox="gallery"
+                ><img
+                  src="images/img_1.jpg"
+                  alt="Free Template by Free-Template.co"
+                  class="img-fluid"
+              /></a>
+            </div>
+            <div class="col-md-6 col-lg-3 mb-4">
+              <a href="images/img_2.jpg" data-fancybox="gallery"
+                ><img
+                  src="images/img_2.jpg"
+                  alt="Free Template by Free-Template.co"
+                  class="img-fluid"
+              /></a>
+            </div>
+            <div class="col-md-6 col-lg-3 mb-4">
+              <a href="images/img_3.jpg" data-fancybox="gallery"
+                ><img
+                  src="images/img_3.jpg"
+                  alt="Free Template by Free-Template.co"
+                  class="img-fluid"
+              /></a>
+            </div>
+            <div class="col-md-6 col-lg-3 mb-4">
+              <a href="images/img_5.jpg" data-fancybox="gallery"
+                ><img
+                  src="images/img_5.jpg"
+                  alt="Free Template by Free-Template.co"
+                  class="img-fluid"
+              /></a>
+            </div>
+
+            <div class="col-md-6 col-lg-3 mb-4">
+              <a href="images/img_3.jpg" data-fancybox="gallery"
+                ><img
+                  src="images/img_3.jpg"
+                  alt="Free Template by Free-Template.co"
+                  class="img-fluid"
+              /></a>
+            </div>
+            <div class="col-md-6 col-lg-3 mb-4">
+              <a href="images/img_5.jpg" data-fancybox="gallery"
+                ><img
+                  src="images/img_5.jpg"
+                  alt="Free Template by Free-Template.co"
+                  class="img-fluid"
+              /></a>
+            </div>
+            <div class="col-md-6 col-lg-3 mb-4">
+              <a href="images/img_1.jpg" data-fancybox="gallery"
+                ><img
+                  src="images/img_1.jpg"
+                  alt="Free Template by Free-Template.co"
+                  class="img-fluid"
+              /></a>
+            </div>
+
+            <div class="col-md-6 col-lg-3 mb-4">
+              <a href="images/img_2.jpg" data-fancybox="gallery"
+                ><img
+                  src="images/img_2.jpg"
+                  alt="Free Template by Free-Template.co"
+                  class="img-fluid"
+              /></a>
+            </div>
+
+            <div class="col-md-6 col-lg-6 mb-4">
+              <a href="images/img_1.jpg" data-fancybox="gallery"
+                ><img
+                  src="images/img_1.jpg"
+                  alt="Free Template by Free-Template.co"
+                  class="img-fluid"
+              /></a>
+            </div>
+            <div class="col-md-6 col-lg-6 mb-4">
+              <a href="images/img_2.jpg" data-fancybox="gallery"
+                ><img
+                  src="images/img_2.jpg"
+                  alt="Free Template by Free-Template.co"
+                  class="img-fluid"
+              /></a>
+            </div>
+            <div class="col-md-6 col-lg-3 mb-4">
+              <a href="images/img_3.jpg" data-fancybox="gallery"
+                ><img
+                  src="images/img_3.jpg"
+                  alt="Free Template by Free-Template.co"
+                  class="img-fluid"
+              /></a>
+            </div>
+            <div class="col-md-6 col-lg-3 mb-4">
+              <a href="images/img_5.jpg" data-fancybox="gallery"
+                ><img
+                  src="images/img_5.jpg"
+                  alt="Free Template by Free-Template.co"
+                  class="img-fluid"
+              /></a>
+            </div>
+
+            <div class="col-md-6 col-lg-3 mb-4">
+              <a href="images/img_1.jpg" data-fancybox="gallery"
+                ><img
+                  src="images/img_1.jpg"
+                  alt="Free Template by Free-Template.co"
+                  class="img-fluid"
+              /></a>
+            </div>
+
+            <div class="col-md-6 col-lg-3 mb-4">
+              <a href="images/img_2.jpg" data-fancybox="gallery"
+                ><img
+                  src="images/img_2.jpg"
+                  alt="Free Template by Free-Template.co"
+                  class="img-fluid"
+              /></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+ <!-- Footer Section -->
+ <footer class="footer">
+  <div class="footer-container">
+      <div class="footer-column">
+          <h4>Quick Link</h4>
+          <ul>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Terms & Conditions</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Help</a></li>
+              <li><a href="#">Rooms</a></li>
+          </ul>
+      </div>
+      <div class="footer-column">
+          <h4>Support</h4>
+          <ul>
+              <li><a href="#">Our Location</a></li>
+              <li><a href="#">The Hosts</a></li>
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Restaurant</a></li>
+          </ul>
+      </div>
+      <div class="footer-column">
+          <h4>Contact Info</h4>
+          <p><strong>Address:</strong> 98 West 21th Street, Suite 721<br>
+          New York NY 10016</p>
+          <p><strong>Phone:</strong> (+1) 435 3533</p>
+          <p><strong>Email:</strong> info@yourdomain.com</p>
+      </div>
+      <div class="footer-column subscribe">
+          <h4>Subscribe</h4>
+          <p>Sign up for our newsletter</p>
+          <form action="#">
+              <input type="email" placeholder="Your email..." style="background-color:  #1a1a1a;">
+              <button type="submit"><img src="./images/send.png" alt="Send"></button>
+          </form>
+      </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footerp">
+      <p>Copyright © 2024 All rights reserved | This template is made with <span>&#10084;</span> by Colorlib</p>
+    </div>
+      <div class="social-icons">
+          <a href="#"><img src="images/fb.png" alt="Facebook"></a>
+          <a href="#"><img src="./images/twit.png" alt="Twitter"></a>
+          <a href="#"><img src="./images/insta.jpeg" alt="Instagram"></a>
+          <a href="#"><img src="./images/linkdin.png" alt="LinkedIn"></a>
+          <a href="#"><img src="./images/yt.jpeg" alt="YouTube"></a>
+      </div>
+  </div>
+</footer>
+    </div>
+              <!-- Menu Section -->
+              <nav class="menu-list" id="menuList" style="display: none;">
+                <ul>
+                  <li><a href="index.html" >Home</a></li>
+                  <li><a href="hotel.html">Hotels</a></li>
+                  <li><a href="about.html">About Us</a></li>
+                  <li><a href="gallery.html" style="color: rgb(17, 165, 128);">Gallery</a></li>
+                  <li><a href="blog.html">News</a></li>
+                  <li><a href="contact.html">Contact</a></li>
+                </ul>
+              </nav>
+              <div class="close" id="closeButton" style="display: none;" onclick="toggleMenu()"><h1>&#10006;</h1></div>
+            </div>
+          </div>
+        
+        
+        <script>
+          let currentSlide = 0;
+        
+        function moveSlide(direction) {
+          const slides = document.querySelectorAll('.slide');
+          const totalSlides = slides.length;
+          
+          currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+          
+          const slider = document.querySelector('.slider');
+          slider.style.transform = `translateX(${-currentSlide * 100}%)`;
+        }
+        function toggleMenu() {
+            const menuList = document.getElementById('menuList');
+            const closeButton = document.getElementById('closeButton');
+            const menuButton = document.getElementById('menuButton');
+            const body = document.body;
+        
+            if (menuList.style.display === "none") {
+              menuList.style.display = "block";
+              closeButton.style.display = "block"; // Show the close button
+              menuButton.style.display = "none"; // Hide the menu button
+              body.classList.add('no-scroll'); // Prevent scrolling
+            } else {
+              menuList.style.display = "none";
+              closeButton.style.display = "none"; // Hide the close button
+              menuButton.style.display = "block"; // Show the menu button
+              body.classList.remove('no-scroll'); // Allow scrolling
+            }
+          }
+        
+        </script>
+  </body>
+</html>
+
+  </div>
+
+       
+  <script>
+    let currentSlide = 0;
+  
+  function moveSlide(direction) {
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+    
+    currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+    
+    const slider = document.querySelector('.slider');
+    slider.style.transform = `translateX(${-currentSlide * 100}%)`;
+  }
+  function toggleMenu() {
+      const menuList = document.getElementById('menuList');
+      const closeButton = document.getElementById('closeButton');
+      const menuButton = document.getElementById('menuButton');
+      const body = document.body;
+  
+      if (menuList.style.display === "none") {
+        menuList.style.display = "block";
+        closeButton.style.display = "block"; // Show the close button
+        menuButton.style.display = "none"; // Hide the menu button
+        body.classList.add('no-scroll'); // Prevent scrolling
+      } else {
+        menuList.style.display = "none";
+        closeButton.style.display = "none"; // Hide the close button
+        menuButton.style.display = "block"; // Show the menu button
+        body.classList.remove('no-scroll'); // Allow scrolling
+      }
+    }
+    <section class="firstpage">
+      <div class="content">
+        <h1>Our Hotel</h1>
+        <p>
+          A free template by
+          <span style="color: #505253">Colorlib. </span>Download and
+          share!
+        </p>
+       
+      </div>
+    </section>
+  </div>
+</div>
+  <!-- END section -->
+
+<section class="pagee2">
+<div class="imgsec11">
+<div class="row1">
+  <div class="dish">
+  <img src="./images/dish.png" style="width: 80px; height: 80px;">
+  <h1>Good Foods</h1>
+  <p>Far far away, behind the word mountains, far<br>from the countries Vokalia and Consonantia,<br>
+    there live the blind texts.</p>
+  </div>
+  <div class="travel">
+    <img src="./images/destination.png" style="width: 80px; height: 80px;">
+    <h1>Travel Anywhere</h1>
+    <p>Far far away, behind the word mountains, far<br>from the countries Vokalia and Consonantia,<br>
+      there live the blind texts.</p>
+    </div>
+    <div class="plane">
+      <img src="./images/plane.png" style="width: 80px; height: 80px;">
+      <h1>Airplane</h1>
+      <p>Far far away, behind the word mountains, far<br>from the countries Vokalia and Consonantia,<br>
+        there live the blind texts.</p>
+      </div>
+</div>
+</div>
+<div class="imgsec2">
+<div class="row2"></div>
+  <div class="beach">
+  <img src="./images/vacations.png" style="width: 80px; height: 80px;">
+  <h1>Beach Resorts</h1>
+  <p>Far far away, behind the word mountains, far<br>from the countries Vokalia and Consonantia,<br>
+    there live the blind texts.</p>
+  </div>
+  <div class="climbing">
+    <img src="./images/climbing.png" style="width: 80px; height: 80px;">
+    <h1>Climbing</h1>
+    <p>Far far away, behind the word mountains, far<br>from the countries Vokalia and Consonantia,<br>
+      there live the blind texts.</p>
+    </div>
+    <div class="ballon">
+      <img src="./images/hot-air-balloon.png" style="width: 80px; height: 80px;">
+      <h1>Good Food</h1>
+      <p>Far far away, behind the word mountains, far<br>from the countries Vokalia and Consonantia,<br>
+        there live the blind texts.</p>
+      </div>
+    </div>
+</div>
+
+</div>
+<section class="family-room">
+<div class="sec23">
+<div class="image-container">
+    <img src="./images/hero_1.jpg" style="width: 500px; height: 350px;" alt="Family Room Image">
+</div>
+<div class="text-container">
+    <h2>Family Room</h2>
+    <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+    <p>A small river named Duden flows by their place and supplies it with the necessary regalia.</p>
+    <a href="#" class="learn-more-btn">Learn More</a>
+</div>
+</div>
+</section> 
+
+    
+</section>
+  <!-- END section -->
+  <section class="presidential-room">
+    <div class="presidential-text-container">
+        <h2>Presidential Room</h2>
+        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+        <p>A small river named Duden flows by their place and supplies it with the necessary regalia.</p>
+        <a href="#" class="presidential-learn-more-btn">Learn More</a>
+    </div>
+    <div class="presidential-image-container">
+        <img src="./images/hero_2.jpg"  style="width: 600px; height: 400px;"   alt="Presidential Room Image">
+    </div>
+</section>
+  
+  <!-- END section -->
+<!--section 4 page 4-->
+<section class="sliderr">
+<div class="manage">
+<div class="tourtext"><h1>Hotel Gallery</h1></div>
+<div class="tourstextsub"><p> Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,<br>there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the<br>Semantics, a large language ocean.</p></div>
+</div>
+
+<div class="slider-container">
+<div class="slider">
+  <div class="slide"><img src="./images/bg.jpg" alt="Image 1"></div>
+  <div class="slide"><img src="./images/bg.jpg" alt="Image 2"></div>
+  <div class="slide"><img src="./images/bg.jpg" alt="Image 3"></div>
+  <div class="slide"><img src="./images/bg.jpg" alt="Image 4"></div>
+</div>
+<button class="prev" onclick="moveSlide(-1)">&#10094;</button>
+<button class="next" onclick="moveSlide(1)">&#10095;</button>
+
+</section>
+<section>
+
+<div class="page4">
+<div class="page4heading">More Hotel Features</div>
+<div class="page4text"><p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,<br>
+  there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the<br>Semantics, a large language ocean.</p></div>
+<div>
+  <div class="blog-section">
+    <div class="blog-card">
+      <img src="./images/bg.jpg" alt="Drinks">
+      <div class="blog-content">
+        <p class="date">FEBRUARY 26, 2018</p>
+        <h2>45 Best Places To Unwind</h2>
+        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+      </div>
+    </div>
+
+    <div class="blog-card">
+      <img src="./images/bg.jpg" alt="Beach">
+      <div class="blog-content">
+        <p class="date">FEBRUARY 26, 2018</p>
+        <h2>45 Best Places To Unwind</h2>
+        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+      </div>
+    </div>
+
+    <div class="blog-card">
+      <img src="./images/bg.jpg" alt="Living Room">
+      <div class="blog-content">
+        <p class="date">FEBRUARY 26, 2018</p>
+        <h2>45 Best Places To Unwind</h2>
+        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+      </div>
+    </div>
+  </div>   
+</section>
+<!-- Footer Section -->
+<footer class="footer">
+<div class="footer-container">
+    <div class="footer-column">
+        <h4>Quick Link</h4>
+        <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Help</a></li>
+            <li><a href="#">Rooms</a></li>
+        </ul>
+    </div>
+    <div class="footer-column">
+        <h4>Support</h4>
+        <ul>
+            <li><a href="#">Our Location</a></li>
+            <li><a href="#">The Hosts</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Restaurant</a></li>
+        </ul>
+    </div>
+    <div class="footer-column">
+        <h4>Contact Info</h4>
+        <p><strong>Address:</strong> 98 West 21th Street, Suite 721<br>
+        New York NY 10016</p>
+        <p><strong>Phone:</strong> (+1) 435 3533</p>
+        <p><strong>Email:</strong> info@yourdomain.com</p>
+    </div>
+    <div class="footer-column subscribe">
+        <h4>Subscribe</h4>
+        <p>Sign up for our newsletter</p>
+        <form action="#">
+            <input type="email" placeholder="Your email..." style="background-color:  #1a1a1a;">
+            <button type="submit"><img src="./images/send.png" alt="Send"></button>
+        </form>
+    </div>
+</div>
+<div class="footer-bottom">
+  <div class="footerp">
+    <p>Copyright © 2024 All rights reserved | This template is made with <span>&#10084;</span> by Colorlib</p>
+  </div>
+    <div class="social-icons">
+        <a href="#"><img src="images/fb.png" alt="Facebook"></a>
+        <a href="#"><img src="./images/twit.png" alt="Twitter"></a>
+        <a href="#"><img src="./images/insta.jpeg" alt="Instagram"></a>
+        <a href="#"><img src="./images/linkdin.png" alt="LinkedIn"></a>
+        <a href="#"><img src="./images/yt.jpeg" alt="YouTube"></a>
+    </div>
+</div>
+</footer>
+
+  </div> 
+           <!-- Menu Section -->
+           <nav class="menu-list" id="menuList" style="display: none;">
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="hotel.html" style="color: rgb(17, 165, 128);">Hotels</a></li>
+              <li><a href="about.html">About Us</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="blog.html">News</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </nav>
+          <div class="close" id="closeButton" style="display: none;" onclick="toggleMenu()"><h1>&#10006;</h1></div>
+        </div>
+      </div>
+    
+    
+    <script>
+      let currentSlide = 0;
+    
+    function moveSlide(direction) {
+      const slides = document.querySelectorAll('.slide');
+      const totalSlides = slides.length;
+      
+      currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+      
+      const slider = document.querySelector('.slider');
+      slider.style.transform = `translateX(${-currentSlide * 100}%)`;
+    }
+    function toggleMenu() {
+        const menuList = document.getElementById('menuList');
+        const closeButton = document.getElementById('closeButton');
+        const menuButton = document.getElementById('menuButton');
+        const body = document.body;
+    
+        if (menuList.style.display === "none") {
+          menuList.style.display = "block";
+          closeButton.style.display = "block"; // Show the close button
+          menuButton.style.display = "none"; // Hide the menu button
+          body.classList.add('no-scroll'); // Prevent scrolling
+        } else {
+          menuList.style.display = "none";
+          closeButton.style.display = "none"; // Hide the close button
+          menuButton.style.display = "block"; // Show the menu button
+          body.classList.remove('no-scroll'); // Allow scrolling
+        }
+      }
+    
+    </script> 
+</body>
+</html>
+
+  </script> 
+  </body>
+</html>
